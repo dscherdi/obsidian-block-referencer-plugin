@@ -1,10 +1,10 @@
 import { App, PluginSettingTab, Setting } from "obsidian";
-import ObsidianBlockReferencerPlugin from "./main";
+import BlockLinkPlugin from "./main";
 
-export class ObsidianBlockReferencerSettingsTab extends PluginSettingTab {
-	plugin: ObsidianBlockReferencerPlugin;
+export class BlockLinkSettingsTab extends PluginSettingTab {
+	plugin: BlockLinkPlugin;
 
-	constructor(app: App, plugin: ObsidianBlockReferencerPlugin) {
+	constructor(app: App, plugin: BlockLinkPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}

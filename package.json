@@ -1,5 +1,5 @@
 {
-	"name": "obsidian-block-referencer",
+	"name": "blocklink",
 	"version": "1.0.0",
 	"description": "This is an obsidian plugin which allows you to query obsidian blocks and reference them.",
 	"main": "main.js",

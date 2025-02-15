@@ -1,17 +1,17 @@
 import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, type MarkdownFileInfo } from 'obsidian';
-import { ObsidianBlockSearchModal } from './obsidian-block-search-modal';
-import { ObsidianBlockReferencerSettingsTab } from './obsidian-block-referencer-settings-tab';
+import { BlockLinkSearchModal } from './blocklink-search-modal';
+import { BlockLinkSettingsTab } from './blocklink-settings-tab';
 
-interface ObsidianBlockReferencerSettings {
+interface BlockLinkSettings {
 	mySetting: string;
 }
 
-const DEFAULT_SETTINGS: ObsidianBlockReferencerSettings = {
+const DEFAULT_SETTINGS: BlockLinkSettings = {
 	mySetting: 'default'
 }
 
-export default class ObsidianBlockReferencerPlugin extends Plugin {
-	settings!: ObsidianBlockReferencerSettings;
+export default class BlockLinkPlugin extends Plugin {
+	settings!: BlockLinkSettings;
 
 	async onload() {
 		await this.loadSettings();
@@ -33,7 +33,7 @@ export default class ObsidianBlockReferencerPlugin extends Plugin {
 			id: 'open-block-search-modal',
 			name: 'Search Blocks',
 			callback: () => {
-				new ObsidianBlockSearchModal(this.app).open();
+				new BlockLinkSearchModal(this.app).open();
 			}
 		});
 		// This adds an editor command that can perform some operation on the current editor instance
@@ -56,7 +56,7 @@ export default class ObsidianBlockReferencerPlugin extends Plugin {
 					// If checking is true, we're simply "checking" if the command can be run.
 					// If checking is false, then we want to actually perform the operation.
 					if (!checking) {
-						new ObsidianBlockSearchModal(this.app).open();
+						new BlockLinkSearchModal(this.app).open();
 					}
 
 					// This command will only show up in Command Palette when the check function returns true
@@ -66,7 +66,7 @@ export default class ObsidianBlockReferencerPlugin extends Plugin {
 		});
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
-		this.addSettingTab(new ObsidianBlockReferencerSettingsTab(this.app, this));
+		this.addSettingTab(new BlockLinkSettingsTab(this.app, this));
 
 		// If the plugin hooks up any global DOM events (on parts of the app that doesn't belong to this plugin)
 		// Using this function will automatically remove the event listener when this plugin is disabled.

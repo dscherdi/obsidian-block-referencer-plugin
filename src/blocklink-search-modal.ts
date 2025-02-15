@@ -1,6 +1,6 @@
 import { App, Modal } from "obsidian";
 
-export class ObsidianBlockSearchModal extends Modal {
+export class BlockLinkSearchModal extends Modal {
     constructor(app: App) {
         super(app);
     }
