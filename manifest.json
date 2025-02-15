@@ -1,0 +1,11 @@
+{
+	"id": "obsidian-block-referencer",
+	"name": "Obsidian Block Referencer",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "This plugin allows you to query obsidian blocks and reference them.",
+	"author": "Obsidian",
+	"authorUrl": "https://obsidian.md",
+	"fundingUrl": "https://obsidian.md/pricing",
+	"isDesktopOnly": false
+}
